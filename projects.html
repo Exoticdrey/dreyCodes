@@ -1,0 +1,1210 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+     -->
+
+
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Your existing CSS styles remain the same -->
+    <style>
+        /* Keep all your existing CSS here */
+    :root {
+        --navy: #0a192f;
+        --electric-blue: #64ffda;
+        --light-gray: #f5f5f5;
+        --white: #ffffff;
+        --soft-gray: #d0d0d0;
+        --lavender: #e6e6fa;
+        --light-cream: #fff8e7;
+        --deep-plum: #4b0082;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--light-gray);
+        color: var(--navy);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+        background-color: var(--navy);
+        padding: 1rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav.scrolled {
+        padding: 0.7rem 5%;
+        background-color: rgba(10, 25, 47, 0.95);
+    }
+
+    .logo {
+        color: var(--electric-blue);
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        color: var(--light-gray);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        position: relative;
+    }
+
+    .nav-links a:hover {
+        color: var(--electric-blue);
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--electric-blue);
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .menu-btn {
+        display: none;
+        cursor: pointer;
+        color: var(--light-gray);
+        font-size: 1.5rem;
+    }
+
+    /* Projects Header */
+    .projects-header {
+        height: 40vh;
+        background-color: var(--navy);
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 10%;
+        position: relative;
+        overflow: hidden;
+        margin-top: 70px;
+    }
+
+    .projects-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(75, 0, 130, 0.2) 0%, rgba(10, 25, 47, 0.8) 100%);
+        z-index: 1;
+    }
+
+    .projects-header-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .projects-header h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s forwards 0.2s;
+    }
+
+    .projects-header p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s forwards 0.4s;
+    }
+
+    /* Projects Section */
+    .projects {
+        padding: 80px 5%;
+    }
+
+    .filter-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .filter-btn {
+        background-color: transparent;
+        color: var(--navy);
+        border: 2px solid var(--navy);
+        padding: 0.5rem 1.5rem;
+        border-radius: 30px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+        background-color: var(--navy);
+        color: var(--white);
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+
+    .project-card {
+        background-color: var(--white);
+        /* border: 1px solid black; */
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .project-card.fade-in {
+        animation: fadeInUp 0.8s forwards;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-img-container {
+        position: relative;
+        overflow: hidden;
+        height: 250px;
+    }
+
+    .project-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-img {
+        transform: scale(1.05);
+    }
+
+    .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(10, 25, 47, 0.85) 0%, rgba(10, 25, 47, 0) 70%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.5rem;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .project-card:hover .project-overlay {
+        opacity: 1;
+    }
+
+    .project-links {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: var(--electric-blue);
+        color: var(--navy);
+        border-radius: 50%;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+        background-color: var(--white);
+        transform: translateY(-3px);
+    }
+
+    .project-content {
+        padding: 1.5rem;
+    }
+
+    .project-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: var(--navy);
+    }
+
+    .project-description {
+        color: var(--navy);
+        opacity: 0.8;
+        margin-bottom: 1rem;
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .project-tag {
+        background-color: var(--lavender);
+        color: var(--deep-plum);
+        padding: 0.2rem 0.7rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    /* Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1001;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .modal.active {
+        display: flex;
+        animation: fadeIn 0.3s forwards;
+    }
+
+    .modal-content {
+        background-color: var(--white);
+        padding: 2rem;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 800px;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+    }
+
+    .modal.active .modal-content {
+        transform: scale(1);
+    }
+
+    .close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        color: var(--navy);
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .close-modal:hover {
+        color: var(--electric-blue);
+    }
+
+    .modal-image {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 1.5rem;
+    }
+
+    .modal-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: var(--navy);
+    }
+
+    .modal-description {
+        margin-bottom: 1.5rem;
+        color: var(--navy);
+        line-height: 1.7;
+    }
+
+    .modal-tech-stack {
+        margin-bottom: 1.5rem;
+    }
+
+    .modal-tech-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: var(--navy);
+    }
+
+    .modal-links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .modal-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1.5rem;
+        background-color: var(--navy);
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .modal-link:hover {
+        background-color: var(--electric-blue);
+        color: var(--navy);
+    }
+
+     /* Contact Section */
+        .contact {
+            padding: 100px 10%;
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-control::placeholder {
+            color: var(--soft-gray);
+        }
+
+        .form-control:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 2px var(--electric-blue);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--electric-blue);
+            color: var(--navy);
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .submit-btn:hover {
+            background-color: rgba(100, 255, 218, 0.9);
+            transform: translateY(-3px);
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--electric-blue);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--electric-blue);
+            color: var(--navy);
+            transform: translateY(-5px);
+        }
+
+
+    /* Footer */
+    footer {
+        background-color: var(--deep-plum);
+        color: var(--white);
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 50px;
+        height: 50px;
+        background-color: var(--electric-blue);
+        color: var(--navy);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+        .nav-links {
+            position: fixed;
+            background-color: var(--navy);
+            top: 0;
+            right: -100%;
+            width: 70%;
+            height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: right 0.5s ease;
+            z-index: 100;
+        }
+
+        .nav-links.active {
+            right: 0;
+        }
+
+        .menu-btn {
+            display: block;
+            z-index: 101;
+        }
+
+        .projects-header {
+            height: 30vh;
+        }
+
+        .projects-header h1 {
+            font-size: 2.5rem;
+        }
+
+        .projects-header p {
+            font-size: 1rem;
+        }
+
+        .projects-grid {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .projects-header h1 {
+            font-size: 2rem;
+        }
+
+        .filter-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">DreyCodes</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html" class="active">Projects</a>
+            <!-- <a href="#about">About</a> -->
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Projects Header -->
+    <section class="projects-header">
+        <div class="projects-header-content">
+            <h1>My Projects</h1>
+            <p>A collection of websites and applications I've designed and developed</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Design</button>
+            <button class="filter-btn" data-filter="app">App Development</button>
+            <button class="filter-btn" data-filter="ui">UI/UX Design</button>
+        </div>
+
+        <!-- THIS IS WHERE MY PROJECT CARDS GO -->
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card" data-category="web">
+                <div class="project-img-container">
+                    <!-- THIS IS WHERE I ADD MY IMAGE -->
+                    <img src="img/Screenshot 2024-09-23 131234.png" alt="mentorship Website" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project1')">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Mentorship Website</h3>
+                    <p class="project-description">A modern Mentorship platform with responsive design.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML5</span>
+                        <span class="project-tag">CSS3</span>
+                        <span class="project-tag">BootStrap</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card" data-category="web">
+                <div class="project-img-container">
+                    <!-- THIS IS WHERE I ADD MY IMAGE -->
+                    <img src="img/Screenshot (36).png" alt="The drey effect UI" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project2')">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="https://exoticdrey.github.io/the-drey-effect/" class="project-link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <a href="https://github.com/exoticdrey/the-drey-effect" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Nail Scheduling Site</h3>
+                    <p class="project-description">A site for booking your nail appointments.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML5</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card" data-category="web">
+                <div class="project-img-container">
+                    <!-- THIS IS WHERE YOU ADD YOUR IMAGE -->
+                    <img src="img/Screenshot 2025-07-09 142942.png" alt="Blog website" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project3')">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">A Blog Website</h3>
+                    <p class="project-description">A sleek responsive blog platform.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML5</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Django</span>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="project-card" data-category="web">
+                <div class="project-img-container">
+                    <!-- THIS IS WHERE YOU ADD YOUR IMAGE -->
+                    <img src="img/Screenshot 2025-07-09 155011.png" alt="event planning website" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project4')">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">An Event Planning Website</h3>
+                    <p class="project-description">An elegant event planning site.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML5</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 5 -->
+            <div class="project-card" data-category="web">
+                <div class="project-img-container">
+                    <!-- THIS IS WHERE YOU ADD YOUR IMAGE -->
+                    <img src="img/Screenshot 2025-07-09 155715.png" alt="portfolio website" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project5')">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">A Portfolio Website</h3>
+                    <p class="project-description">A personal web developer portfolio.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML5</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 6 -->
+            <div class="project-card" data-category="web">
+                <div class="project-img-container">
+                    <!-- THIS IS WHERE YOU ADD YOUR IMAGE -->
+                    <img src="img/Screenshot 2025-07-09 155632.png" alt="pharmacy website" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project6')">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">A Pharmacy Website</h3>
+                    <p class="project-description">A responsive pharmacy website with cart features.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML5</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Django</span>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- add more project cards as needed -->
+        </div>
+    </section>
+
+    <!-- Project Modals (for detailed project view) -->
+    <div id="project1Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <img src="img/Screenshot 2024-09-23 131234.png" alt="Mentorship Website" class="modal-image">
+            <h2 class="modal-title">Mentorship Website</h2>
+            <div class="modal-description">
+                <p>Mentorly is a beginner-friendly mentorship website and the very first site I ever created. It was built to connect mentors and mentees through a clean, simple interface. The platform allows users to view mentor profiles, learn about their expertise, and initiate contact for guidance. Mentorly reflects my early passion for web development and was a foundational project that helped me understand layout structure, navigation, and responsive design.</p>
+            </div>
+            <div class="modal-tech-stack">
+                <h3 class="modal-tech-title">Technologies Used:</h3>
+                <div class="project-tags">
+                    <span class="project-tag">HTML5</span>
+                    <span class="project-tag">CSS3</span>
+                    <span class="project-tag">JavaScript</span>
+                </div>
+            </div>
+            <div class="modal-links">
+                <a href="http://127.0.0.1:5504/index.html" class="modal-link">
+                    <i class="fas fa-link"></i> Visit Site
+                </a>
+                <a href="#" class="modal-link">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Project Modals (for detailed project view) -->
+    <div id="project2Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <img src="img/Screenshot (36).png" alt="The drey effect UI" class="modal-image">
+            <h2 class="modal-title">Nail Scheduling Site</h2>
+            <div class="modal-description">
+                <p>The Drey Effect is a sleek and modern nail tech website created for my personal brand. It showcases high-quality manicure and pedicure services, allowing clients to explore style options, view prices, and make bookings through a clean, interactive interface. Instead of direct online payments, the platform uses a WhatsApp integration to send clients’ selected services straight to me, making it easy to confirm and finalize appointments.</p>
+            </div>
+            <div class="modal-tech-stack">
+                <h3 class="modal-tech-title">Technologies Used:</h3>
+                <div class="project-tags">
+                    <span class="project-tag">HTML5</span>
+                    <span class="project-tag">CSS3</span>
+                    <span class="project-tag">JavaScript</span>
+                </div>
+            </div>
+            <div class="modal-links">
+                <a href="https://exoticdrey.github.io/the-drey-effect/" class="modal-link">
+                    <i class="fas fa-link"></i> Visit Site
+                </a>
+                <a href="https://github.com/exoticdrey/the-drey-effect" class="modal-link">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modals (for detailed project view) -->
+    <div id="project3Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <img src="img/Screenshot 2025-07-09 142942.png" alt="blog website" class="modal-image">
+            <h2 class="modal-title">A Blog Website</h2>
+            <div class="modal-description">
+                <p>Dlogs is a sleek and responsive blog platform built with Django and vanilla HTML/CSS/JS, designed to give content creators a clean and simple space to share articles, tutorials, and updates.
+
+It features a homepage with categorized posts, an individual post view with a comments section, a search feature, and responsive navigation for both desktop and mobile screens. Dlogs is lightweight, user-friendly, and structured to be extended easily into a full CMS or personal portfolio blog.</p>
+            </div>
+            <div class="modal-tech-stack">
+                <h3 class="modal-tech-title">Technologies Used:</h3>
+                <div class="project-tags">
+                    <span class="project-tag">HTML5</span>
+                    <span class="project-tag">CSS3</span>
+                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">Django</span>
+                </div>
+            </div>
+            <div class="modal-links">
+                <a href="https://exoticdrey.github.io/the-drey-effect/" class="modal-link">
+                    <i class="fas fa-link"></i> Visit Site
+                </a>
+                <a href="https://github.com/exoticdrey/the-drey-effect" class="modal-link">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modals (for detailed project view) -->
+    <div id="project4Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <img src="img/Screenshot 2025-07-09 155011.png" alt="event planning site" class="modal-image">
+            <h2 class="modal-title">An Event Planning Website</h2>
+            <div class="modal-description">
+                <p>Sage & Silk is a beautifully designed, static event planning website created to showcase premium event coordination services with sophistication and simplicity. It includes essential sections like a welcoming hero banner, an engaging About page with founder details, a list of services offered, and a contact section for direct client inquiries.
+
+Built with clean HTML, CSS, and minimal JavaScript, this site is optimized for both desktop and mobile, reflecting the brand's elegance and professionalism. Whether it’s weddings, corporate gatherings, or private parties, Sage & Silk positions itself as the go-to brand for memorable, well-curated experiences.
+
+</p>
+            </div>
+            <div class="modal-tech-stack">
+                <h3 class="modal-tech-title">Technologies Used:</h3>
+                <div class="project-tags">
+                    <span class="project-tag">HTML5</span>
+                    <span class="project-tag">CSS3</span>
+                    <span class="project-tag">JavaScript</span>
+                </div>
+            </div>
+            <div class="modal-links">
+                <a href="https://exoticdrey.github.io/the-drey-effect/" class="modal-link">
+                    <i class="fas fa-link"></i> Visit Site
+                </a>
+                <a href="https://github.com/exoticdrey/the-drey-effect" class="modal-link">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modals (for detailed project view) -->
+    <div id="project5Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <img src="img/Screenshot 2025-07-09 155715.png" alt="portfolio website" class="modal-image">
+            <h2 class="modal-title">A Portfolio Website</h2>
+            <div class="modal-description">
+                <p>DreyCodes is a sleek and modern personal portfolio website designed to showcase my skills, projects, and services as a front-end web developer. The goal of the site is to create a central hub where potential clients, collaborators, and recruiters can explore my work, learn about me, and get in touch easily.
+
+The website features a smooth scrolling experience, minimal yet elegant design, and responsive layouts for all devices. It includes a project gallery, an "About Me" section, links to my GitHub and resume, and clickable contact options like email and WhatsApp.</p>
+            </div>
+            <div class="modal-tech-stack">
+                <h3 class="modal-tech-title">Technologies Used:</h3>
+                <div class="project-tags">
+                    <span class="project-tag">HTML5</span>
+                    <span class="project-tag">CSS3</span>
+                    <span class="project-tag">JavaScript</span>
+                </div>
+            </div>
+            <div class="modal-links">
+                <a href="https://exoticdrey.github.io/the-drey-effect/" class="modal-link">
+                    <i class="fas fa-link"></i> Visit Site
+                </a>
+                <a href="https://github.com/exoticdrey/the-drey-effect" class="modal-link">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modals (for detailed project view) -->
+    <div id="project6Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <img src="img/Screenshot 2025-07-09 155632.png" alt="pharmacy site" class="modal-image">
+            <h2 class="modal-title">A Pharmacy Website</h2>
+            <div class="modal-description">
+                <p>Simply Health is a modern, user-friendly pharmacy website built for my aunt’s business. The site showcases available medications and health products in an organized and easy-to-navigate format. Instead of online purchases, users can browse products, add them to a virtual cart, and send their selections directly via WhatsApp for processing. This streamlines customer communication while keeping the ordering process simple and accessible.
+
+🛠 Key Features
+Homepage with welcome message and clean navigation
+
+About section with a personal touch, including a founder photo
+
+Product listing page with add-to-cart functionality
+
+WhatsApp integration for submitting orders (no payment gateway)
+
+Contact section for customer inquiries
+
+Fully responsive design, optimized for all devices
+
+</p>
+            </div>
+            <div class="modal-tech-stack">
+                <h3 class="modal-tech-title">Technologies Used:</h3>
+                <div class="project-tags">
+                    <span class="project-tag">HTML5</span>
+                    <span class="project-tag">CSS3</span>
+                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">Django</span>
+                </div>
+            </div>
+            <div class="modal-links">
+                <a href="https://exoticdrey.github.io/the-drey-effect/" class="modal-link">
+                    <i class="fas fa-link"></i> Visit Site
+                </a>
+                <a href="https://github.com/exoticdrey/the-drey-effect" class="modal-link">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Add more modals for other projects -->
+    
+     <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <!-- <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submitto:obiaudrey112@gmail.com" class="submit-btn">Send Message</button>
+                </form>
+            </div> -->
+            <div class="contact-info">
+                <p>I'm always open to new opportunities and collaborations. Feel free to reach out if you have a question or just want to say hi!</p>
+                <p>You can contact me via email or connect with me on social media.</p>
+                <p>Make sure to use the icons!</p>
+                <div class="social-links">
+                    <a href="mailto:obiaudrey112@gmail.com" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://instagram.com/yourusername" target="_blank" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 DreyCodes. All rights reserved.</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Navigation menu toggle for mobile
+        document.querySelector('.menu-btn').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Back to top button functionality
+        const backToTopBtn = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Sticky navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.pageYOffset > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Project modal functionality
+        function openProjectModal(projectId) {
+            document.getElementById(projectId + 'Modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal when clicking the close button
+        document.querySelectorAll('.close-modal').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close modal when clicking outside of it
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Animate project cards on scroll
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        projectCards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
