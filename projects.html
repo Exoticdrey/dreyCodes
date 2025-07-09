@@ -613,6 +613,15 @@
         .projects-grid {
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         }
+
+        .project-overlay {
+        opacity: 1;
+        background: linear-gradient(0deg, rgba(10, 25, 47, 0.85) 0%, rgba(10, 25, 47, 0.4) 70%);
+    }
+
+    .project-card:hover .project-overlay {
+        opacity: 1;
+    }
     }
 
     @media screen and (max-width: 480px) {
