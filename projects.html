@@ -575,46 +575,61 @@
     }
 
     /* Responsive Design */
-    @media screen and (max-width: 768px) {
-        .nav-links {
-            position: fixed;
-            background-color: var(--navy);
-            top: 0;
-            right: -100%;
-            width: 70%;
-            height: 100vh;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: right 0.5s ease;
-            z-index: 100;
-        }
-
-        .nav-links.active {
-            right: 0;
-        }
-
-        .menu-btn {
-            display: block;
-            z-index: 101;
-        }
-
-        .projects-header {
-            height: 30vh;
-        }
-
-        .projects-header h1 {
-            font-size: 2.5rem;
-        }
-
-        .projects-header p {
-            font-size: 1rem;
-        }
-
-        .projects-grid {
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        }
+   @media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        background-color: var(--navy);
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.5s ease;
+        z-index: 100;
     }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .menu-btn {
+        display: block;
+        z-index: 101;
+    }
+
+    .projects-header {
+        height: 30vh;
+    }
+
+    .projects-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .projects-header p {
+        font-size: 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    /* 👇 Add this fix */
+    .project-overlay {
+        opacity: 1 !important;
+        pointer-events: auto;
+    }
+
+    .project-img {
+        transform: none !important;
+    }
+
+    .project-card:hover .project-img {
+        transform: none !important;
+    }
+}
+
 
     @media screen and (max-width: 480px) {
         .projects-header h1 {
@@ -736,7 +751,7 @@
                             <a href="#" class="project-link" onclick="openProjectModal('project3')">
                                 <i class="fas fa-search"></i>
                             </a>
-                            <a href="#" class="project-link">
+                            <a href="https://dlogs.onrender.com/" class="project-link">
                                 <i class="fas fa-link"></i>
                             </a>
                             <!-- <a href="#" class="project-link">
@@ -747,7 +762,7 @@
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">A Blog Website</h3>
-                    <p class="project-description">A sleek responsive blog platform. Not been hosted yet.</p>
+                    <p class="project-description">A sleek responsive blog platform.</p>
                     <div class="project-tags">
                         <span class="project-tag">HTML5</span>
                         <span class="project-tag">CSS</span>
@@ -768,7 +783,7 @@
                             <a href="#" class="project-link" onclick="openProjectModal('project4')">
                                 <i class="fas fa-search"></i>
                             </a>
-                            <a href="#" class="project-link">
+                            <a href="https://exoticdrey.github.io/dreye/" class="project-link">
                                 <i class="fas fa-link"></i>
                             </a>
                             <!-- <a href="#" class="project-link">
@@ -830,7 +845,7 @@
                             <a href="#" class="project-link" onclick="openProjectModal('project6')">
                                 <i class="fas fa-search"></i>
                             </a>
-                            <a href="#" class="project-link">
+                            <a href="https://exoticdrey.github.io/dreyCodes/" class="project-link">
                                 <i class="fas fa-link"></i>
                             </a>
                             <!-- <a href="#" class="project-link">
@@ -964,7 +979,7 @@ It features a homepage with categorized posts, an individual post view with a co
                 </div>
             </div>
             <div class="modal-links">
-                <a href="#" class="modal-link">
+                <a href="https://dlogs.onrender.com/" class="modal-link">
                     <i class="fas fa-link"></i> Visit Site
                 </a>
                 <!-- <a href="https://github.com/exoticdrey/the-drey-effect" class="modal-link">
