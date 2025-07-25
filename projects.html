@@ -897,6 +897,38 @@
                 </div>
             </div>
 
+                        <!-- Project Card 8 -->
+            <div class="project-card" data-category="web">
+                <div class="project-img-container">
+                    <!-- THIS IS WHERE YOU ADD YOUR IMAGE -->
+                    <img src="img/Screenshot 2025-07-25 121249.png" alt="mock portfolio website" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project8')">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="https://mock-portfolio-liard.vercel.app/" class="project-link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <!-- <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">A Mock Portfolio Website</h3>
+                    <p class="project-description">A responsive mock portfolio site created with next.js and Tailwind CSS.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Next.js</span>
+                        <span class="project-tag">Tailwind CSS</span>
+                        <span class="project-tag">React Hook Form</span>
+                        <span class="project-tag">GitHub & Vercel</span>
+                        
+                    </div>
+                </div>
+            </div>
+
             <!-- add more project cards as needed -->
         </div>
     </section>
@@ -1117,6 +1149,35 @@ Fully responsive design, optimized for all devices
             </div>
             <div class="modal-links">
                 <a href="#" class="modal-link">
+                    <i class="fas fa-link"></i> Visit Site
+                </a>
+                <!-- <a href="https://github.com/exoticdrey/the-drey-effect" class="modal-link">
+                    <i class="fab fa-github"></i> View Code
+                </a> -->
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Project Modals (for detailed project view) -->
+    <div id="project8Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <img src="img/Screenshot 2025-07-25 121249.png" alt="mock portfolio website" class="modal-image">
+            <h2 class="modal-title">A Mock Portfolio Website</h2>
+            <div class="modal-description">
+                <p>This is a responsive personal portfolio website built with Next.js (using the App Router) and styled with Tailwind CSS. It features a homepage, about page, projects page that pulls data from a local JSON file, and a fully functional contact form with client-side validation using React Hook Form and a Next.js API route to handle submissions. The site is version-controlled with GitHub and deployed on Vercel for fast, optimized performance.</p>
+            </div>
+            <div class="modal-tech-stack">
+                <h3 class="modal-tech-title">Technologies Used:</h3>
+                <div class="project-tags">
+                    <span class="project-tag">Next.js</span>
+                    <span class="project-tag">Tailwind CSS</span>
+                    <span class="project-tag">React Hook Form</span>
+                </div>
+            </div>
+            <div class="modal-links">
+                <a href="https://mock-portfolio-liard.vercel.app/" class="modal-link">
                     <i class="fas fa-link"></i> Visit Site
                 </a>
                 <!-- <a href="https://github.com/exoticdrey/the-drey-effect" class="modal-link">
