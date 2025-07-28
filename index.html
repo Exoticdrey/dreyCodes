@@ -229,7 +229,31 @@
             background-color: rgba(100, 255, 218, 0.1);
             transform: translateY(-3px);
         }
+        
+        .cta-btn2{
+            display: inline-block;
+            background-color: transparent;
+            color: var(--electric-blue);
+            border: 2px solid var(--electric-blue);
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards 1s;
+            margin-left: 10px;
+        }
 
+        .cta-btn2:hover {
+            background-color: var(--electric-blue);
+            transform: translateY(-3px);
+            color: var(--deep-plum);
+        }
+        
         /* About Section */
         .about {
             padding: 100px 10%;
@@ -277,7 +301,29 @@
             border-radius: 4px;
             margin-top: 1rem;
         }
+        
+        .resume {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--deep-plum);
+            border: 2px solid var(--deep-plum);
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards 1s;
+        }
 
+        .resume:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
+        }
+        
         .about-image {
             flex: 1;
             min-width: 300px;
@@ -320,7 +366,56 @@
         .profile-img-container:hover::after {
             transform: translate(15px, 15px);
         }
+        
+        #services {
+  padding: 4rem 2rem;
+  background: var(--navy);
+  text-align: center;
+color: var(--navy);
+}
 
+.service-title {
+  text-align: left;
+  margin-bottom: 2rem;
+  color: var(--white);
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--electric-blue);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: #5a67d8;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+        
         /* Skills Section */
         .skills {
             padding: 100px 10%;
@@ -537,7 +632,11 @@
                 flex-direction: column;
                 padding: 80px 5%;
             }
-
+            
+            .services-container{
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
             .skills, .contact {
                 padding: 80px 5%;
             }
@@ -578,6 +677,7 @@
         <div class="nav-links" id="navLinks">
             <a href="#about">About</a>
             <a href="projects.html">Projects</a>
+            <a href="#services">Services</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </div>
@@ -594,6 +694,8 @@
             <h2>I build amazing web experiences</h2>
             <p>I'm a web developer specializing in creating exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.</p>
             <a href="#contact" class="cta-btn">Get In Touch</a>
+            <a href="projects.html" class="cta-btn2">View Work</a>
+
         </div>
     </section>
 
@@ -607,7 +709,8 @@
             <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying outdoor activities.</p>
             <div class="experience-years">
                 <i class="fas fa-code"></i> <span id="xyears">2</span> Years of Experience
-            </div>
+            </div><br>
+                <a href="MY CV - OBI CHISOMAGA OBI.pdf" download class="resume">Download Resume</a>
         </div>
         <div class="about-image">
             <div class="profile-img-container">
@@ -615,7 +718,43 @@
             </div>
         </div>
     </section>
-
+    
+    <section id="services">
+  <h2 class="section-title service-title">My Services</h2>
+  <div class="services-container">
+    <div class="service-card">
+      <span class="service-icon">💻</span>
+      <h3>Custom Websites</h3>
+      <p>Responsive static or dynamic sites built with HTML, CSS, JS, or Django.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">⚛️</span>
+      <h3>React Web Apps</h3>
+      <p>Modern front-end apps with interactive UIs and reusable components.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔗</span>
+      <h3>Full-Stack (Django + React)</h3>
+      <p>Complete web apps with database, authentication, and clean UIs.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🎯</span>
+      <h3>Website Cloning & Rebranding</h3>
+      <p>Pixel-perfect clones with your branding, colors, and content.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🚀</span>
+      <h3>Hosting & Deployment</h3>
+      <p>GitHub Pages, Vercel, Netlify, Render – with domain setup.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🐞</span>
+      <h3>Bug Fixes & Optimization</h3>
+      <p>Debug HTML/CSS/JS or React issues and speed up your site.</p>
+    </div>
+  </div>
+</section>
+    
     <!-- Skills Section -->
     <section class="skills" id="skills">
         <h2 class="section-title">Skills &amp; Technologies</h2>
@@ -724,11 +863,8 @@
                     <a href="mailto:dreycodes2025@gmail.com" class="social-link" title="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="https://wa.me/2347042872496" target="_blank" class="social-link" title="whatsapp">
+                    <a href="https://wa.me/2348148002221" target="_blank" class="social-link" title="whatsapp">
                         <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://github.com/exoticdrey" target="_blank" class="social-link" title="GitHub">
-                        <i class="fab fa-github"></i>
                     </a>
                 </div>
             </div>
