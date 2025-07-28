@@ -245,13 +245,13 @@
         flex-direction: column;
         justify-content: flex-end;
         padding: 1.5rem;
-        opacity: 0;
+        opacity: 1;
         transition: opacity 0.5s ease;
     }
 
-    .project-card:hover .project-overlay {
-        opacity: 1;
-    }
+    /*.project-card:hover .project-overlay {
+        opacity: 1;/*
+    }/*
 
     .project-links {
         display: flex;
@@ -651,19 +651,7 @@
             grid-template-columns: 1fr;
         }
         
-        /* 👇 Add this fix */
-    .project-overlay {
-        opacity: 1 !important;
-        pointer-events: auto;
-    }
-
-    .project-img {
-        transform: none !important;
-    }
-
-    .project-card:hover .project-img {
-        transform: none !important;
-    }
+        
     }
     </style>
 </head>
