@@ -743,14 +743,47 @@
                 </div>
             </div>
 
-            <!-- Project Card 3 -->
+             <!-- Project Card 3 -->
+            <div class="project-card" data-category="web">
+                <div class="project-img-container">
+                    <!-- THIS IS WHERE I ADD MY IMAGE -->
+                    <img src="img/Screenshot 2025-09-28 144630.png" alt="TypeRush UI" class="project-img">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" onclick="openProjectModal('project3')">
+                                <i class="fas fa-search"></i>
+                                <span>View More</span>
+                            </a>
+                            <a href="https://exoticdrey.github.io/typeRush/" class="project-link">
+                                <i class="fas fa-link"></i>
+                                <span>View Site</span>
+                            </a>
+                            <!-- <a href="https://github.com/exoticdrey/the-drey-effect" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Typing Speed App</h3>
+                    <p class="project-description">A fun interactive typing speed challenege built with HTML, CSS and JavaScript to test accuracy and speed in real time</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML5</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Project Card 4 -->
             <div class="project-card" data-category="web">
                 <div class="project-img-container">
                     <!-- THIS IS WHERE YOU ADD YOUR IMAGE -->
                     <img src="img/Screenshot 2025-07-09 142942.png" alt="Blog website" class="project-img">
                     <div class="project-overlay">
                         <div class="project-links">
-                            <a href="#" class="project-link" onclick="openProjectModal('project3')">
+                            <a href="#" class="project-link" onclick="openProjectModal('project4')">
                                 <i class="fas fa-search"></i>
                                 <span>View More</span>
                             </a>
@@ -777,14 +810,14 @@
                 </div>
             </div>
 
-            <!-- Project Card 4 -->
+            <!-- Project Card 5 -->
             <div class="project-card" data-category="web">
                 <div class="project-img-container">
                     <!-- THIS IS WHERE YOU ADD YOUR IMAGE -->
                     <img src="img/image.png" alt="fashion website" class="project-img">
                     <div class="project-overlay">
                         <div class="project-links">
-                            <a href="#" class="project-link" onclick="openProjectModal('project4')">
+                            <a href="#" class="project-link" onclick="openProjectModal('project5')">
                                 <i class="fas fa-search"></i>
                                 <span>View More</span>
                             </a>
@@ -811,14 +844,14 @@
                 </div>
             </div>
 
-            <!-- Project Card 5 -->
+            <!-- Project Card 6 -->
             <div class="project-card" data-category="web">
                 <div class="project-img-container">
                     <!-- THIS IS WHERE YOU ADD YOUR IMAGE -->
                     <img src="img/Screenshot 2025-07-09 155011.png" alt="event planning website" class="project-img">
                     <div class="project-overlay">
                         <div class="project-links">
-                            <a href="#" class="project-link" onclick="openProjectModal('project5')">
+                            <a href="#" class="project-link" onclick="openProjectModal('project6')">
                                 <i class="fas fa-search"></i>
                                 <span>View More</span>
                             </a>
@@ -843,14 +876,14 @@
                 </div>
             </div>
 
-            <!-- Project Card 6 -->
+            <!-- Project Card 7 -->
             <div class="project-card" data-category="web">
                 <div class="project-img-container">
                     <!-- THIS IS WHERE YOU ADD YOUR IMAGE -->
                     <img src="img/Screenshot 2025-07-09 155715.png" alt="portfolio website" class="project-img">
                     <div class="project-overlay">
                         <div class="project-links">
-                            <a href="#" class="project-link" onclick="openProjectModal('project6')">
+                            <a href="#" class="project-link" onclick="openProjectModal('project7')">
                                 <i class="fas fa-search"></i>
                                 <span>View More</span>
                             </a>
@@ -875,14 +908,14 @@
                 </div>
             </div>
 
-            <!-- Project Card 7 -->
+            <!-- Project Card 8 -->
             <div class="project-card" data-category="web">
                 <div class="project-img-container">
                     <!-- THIS IS WHERE YOU ADD YOUR IMAGE -->
                     <img src="img/Screenshot 2025-07-09 155632.png" alt="pharmacy website" class="project-img">
                     <div class="project-overlay">
                         <div class="project-links">
-                            <a href="#" class="project-link" onclick="openProjectModal('project7')">
+                            <a href="#" class="project-link" onclick="openProjectModal('project8')">
                                 <i class="fas fa-search"></i>
                                 <span>View More</span>
                             </a>
@@ -909,14 +942,14 @@
                 </div>
             </div>
 
-                        <!-- Project Card 8 -->
+                        <!-- Project Card 9 -->
             <div class="project-card" data-category="web">
                 <div class="project-img-container">
                     <!-- THIS IS WHERE YOU ADD YOUR IMAGE -->
                     <img src="img/Screenshot 2025-07-25 121249.png" alt="mock portfolio website" class="project-img">
                     <div class="project-overlay">
                         <div class="project-links">
-                            <a href="#" class="project-link" onclick="openProjectModal('project8')">
+                            <a href="#" class="project-link" onclick="openProjectModal('project9')">
                                 <i class="fas fa-search"></i>
                                 <span>View More</span>
                             </a>
@@ -1004,8 +1037,35 @@
         </div>
     </div>
 
+     <div id="project3Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <img src="img/Screenshot (36).png" alt="TypeRush UI" class="modal-image">
+            <h2 class="modal-title">Typing Speed App</h2>
+            <div class="modal-description">
+                <p>TypeRush is a browser-based typing speed challenge designed to make practicing typing fun and engaging. Built with HTML, CSS, and vanilla JavaScript, it dynamically generates random text passages, tracks typing speed in words per minute (WPM), and measures accuracy in real-time. The clean UI with a modern color palette ensures an enjoyable user experience while showcasing essential front-end development skills like DOM manipulation, event handling, and state updates.</p>
+            </div>
+            <div class="modal-tech-stack">
+                <h3 class="modal-tech-title">Technologies Used:</h3>
+                <div class="project-tags">
+                    <span class="project-tag">HTML5</span>
+                    <span class="project-tag">CSS3</span>
+                    <span class="project-tag">JavaScript</span>
+                </div>
+            </div>
+            <div class="modal-links">
+                <a href="https://exoticdrey.github.io/typeRush/" class="modal-link">
+                    <i class="fas fa-link"></i> Visit Site
+                </a>
+                <!-- <a href="https://github.com/exoticdrey/the-drey-effect" class="modal-link">
+                    <i class="fab fa-github"></i> View Code
+                </a> -->
+            </div>
+        </div>
+    </div>
+
     <!-- Project Modals (for detailed project view) -->
-    <div id="project3Modal" class="modal">
+    <div id="project4Modal" class="modal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
             <img src="img/Screenshot 2025-07-09 142942.png" alt="blog website" class="modal-image">
@@ -1037,7 +1097,7 @@ It features a homepage with categorized posts, an individual post view with a co
 
 
     <!-- Project Modals (for detailed project view) -->
-    <div id="project4Modal" class="modal">
+    <div id="project5Modal" class="modal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
             <img src="img/image.png" alt="fashion website" class="modal-image">
@@ -1067,7 +1127,7 @@ It features a homepage with categorized posts, an individual post view with a co
 
 
     <!-- Project Modals (for detailed project view) -->
-    <div id="project5Modal" class="modal">
+    <div id="project6Modal" class="modal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
             <img src="img/Screenshot 2025-07-09 155011.png" alt="event planning site" class="modal-image">
@@ -1099,7 +1159,7 @@ Built with clean HTML, CSS, and minimal JavaScript, this site is optimized for b
     </div>
 
     <!-- Project Modals (for detailed project view) -->
-    <div id="project6Modal" class="modal">
+    <div id="project7Modal" class="modal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
             <img src="img/Screenshot 2025-07-09 155715.png" alt="portfolio website" class="modal-image">
@@ -1129,7 +1189,7 @@ The website features a smooth scrolling experience, minimal yet elegant design, 
     </div>
 
     <!-- Project Modals (for detailed project view) -->
-    <div id="project7Modal" class="modal">
+    <div id="project8Modal" class="modal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
             <img src="img/Screenshot 2025-07-09 155632.png" alt="pharmacy site" class="modal-image">
@@ -1174,7 +1234,7 @@ Fully responsive design, optimized for all devices
 
 
         <!-- Project Modals (for detailed project view) -->
-    <div id="project8Modal" class="modal">
+    <div id="project9Modal" class="modal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
             <img src="img/Screenshot 2025-07-25 121249.png" alt="mock portfolio website" class="modal-image">
